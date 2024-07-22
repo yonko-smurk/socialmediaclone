@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock title %}
+{% block content %}
+<h2 id="id_login_header">Log In</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'password_reset' %}" id="id_password_reset"><p>Forgot password?</p></a>
+    <button type="submit" id="id_login" class="btn btn-secondary ml-2" style="background-color: #de2984;">Log In</button>
+    <a href="{% url 'accounts:signup' %}" id="id_register" class="btn btn-secondary ml-2" style="background-color: #8642c1;">Register Here</a>
+</form>
+{% endblock content %}
